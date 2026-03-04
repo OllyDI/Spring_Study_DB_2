@@ -1,4 +1,4 @@
-Spring_Study_DB_2 for Inflearn
+# Spring_Study_DB_2 for Inflearn
 □ 스프링 DB 2편 - 데이터 접근 활용 기술
 
 □ 강의내용
