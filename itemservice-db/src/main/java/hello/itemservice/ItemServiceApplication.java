@@ -17,7 +17,8 @@ import javax.sql.DataSource;
 //@Import(MemoryConfig.class)
 //@Import(JdbcTemplateV1Config.class)
 //@Import(JdbcTemplateV2Config.class)
-@Import(JdbcTemplateV3Config.class)
+//@Import(JdbcTemplateV3Config.class)
+@Import(MyBatisConfig.class)
 @SpringBootApplication(scanBasePackages = "hello.itemservice.web")
 public class ItemServiceApplication {
 
@@ -31,16 +32,17 @@ public class ItemServiceApplication {
 		return new TestDataInit(itemRepository);
 	}
 
-	@Bean
-	@Profile("test")
-	public DataSource datasource() {
-		log.info("메모리 데이터베이스 초기화");
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:mem:db;DB_CLOSE_DELAY=-1");	// mem을 붙이면 jvm 내에 db를 만들어서 사용
-		dataSource.setUsername("sa");
-		dataSource.setPassword("");
-		return dataSource;
-	}
+	// 임베디드 모드를 사용하면 빈을 등록 안해도 됨
+//	@Bean
+//	@Profile("test")
+//	public DataSource datasource() {
+//		log.info("메모리 데이터베이스 초기화");
+//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//		dataSource.setDriverClassName("org.h2.Driver");
+//		dataSource.setUrl("jdbc:h2:mem:db;DB_CLOSE_DELAY=-1");	// mem을 붙이면 jvm 내에 db를 만들어서 사용
+//		dataSource.setUsername("sa");
+//		dataSource.setPassword("");
+//		return dataSource;
+//	}
 
 }
