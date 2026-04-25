@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Slf4j
-@Repository
+@Repository // 이 어노테이션이 붙으면 예외 변환 AOP 적용 대상이 됨 -> jpa 예외 변환기를 등록해줌. 스프링 데이터 접근 예외로 변환
 @Transactional
 public class JpaItemRepository implements ItemRepository {
 
