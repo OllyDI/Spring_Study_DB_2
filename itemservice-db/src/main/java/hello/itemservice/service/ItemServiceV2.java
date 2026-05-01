@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-// 추상화를 하지 않고 바로 서비스에 구현체를 생성
+// 추상화를 하지 않고 바로 서비스에 구현체를 생성 - 상황에 따라 선택
 @Service
 @RequiredArgsConstructor
 @Transactional
